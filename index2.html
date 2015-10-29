@@ -1,0 +1,33 @@
+<html>
+<body>
+	<script>
+
+	var carrito = function(){
+		var cart = [], listai, totali, agregar;
+		agregar =function(prod,pre){
+			cart.push({producto:prod,precio:pre});
+		}
+		totali= function(){
+		   var tot=0;
+			cart.forEach(function(entry) {
+			 tot+=entry.precio;
+			});
+		   return tot;
+		}
+		listai=function(){
+			var pro=[];
+			cart.forEach(function(entry) {
+			 	pro.push(entry.producto);
+			});
+		   return "$"+pro.toString();
+		} 
+		return{
+			total:totali,
+			lista:listai,
+			agregar: agregar
+		}
+	}
+	</script>
+</body>
+</html>
+
